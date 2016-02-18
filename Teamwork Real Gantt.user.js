@@ -4,7 +4,7 @@
 // @namespace  http://realisations.net
 // @version    0.1
 // @description  Make the world a better place
-// @match      https://realisationsnet.teamworkpm.net/projects?display=projectChart
+// @match      https://realisationsnet.teamworkpm.net/*
 // @require http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
