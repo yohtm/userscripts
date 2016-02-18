@@ -6,6 +6,7 @@
 // @description  Make the world a better place
 // @match      https://realisationsnet.teamworkpm.net/*
 // @require http://code.jquery.com/jquery-latest.js
+// @updateURL https://github.com/yohtm/userscripts/raw/master/Teamwork%20Real%20Gantt.user.js
 // ==/UserScript==
 
 function run(){
