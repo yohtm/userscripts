@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name       BetterTeamworkPM
 // @namespace  http://realisations.net
-// @version    0.31
+// @version    0.32
 // @description  Make the world a better place
 // @match      https://*.teamworkpm.net/*
 // @require http://code.jquery.com/jquery-latest.js
