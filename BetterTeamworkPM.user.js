@@ -40,6 +40,8 @@ function runTasklist(tasklist){
         ini = $(this).text();
         if (ini == "90%"){
             $(this).html("<div style='width: 45px; height:18px; background-color: rgb(0, 150, 25); color: white; text-align: center; border-radius: 4px;' >Done</div>")
+        }else if (ini == "10%"){
+            $(this).html("<div style='width: 70px; height:18px; background-color: rgb(255, 153, 0); color: white; text-align: center; border-radius: 4px;' >In progress</div>")
         }
     })
 
