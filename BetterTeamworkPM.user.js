@@ -22,13 +22,13 @@ function runGantt(){
 
 function runTasklist(tasklist){
     //console.log(tasklist)
-    all_assign_span = tasklist.find("span.n")
+    var all_assign_span = tasklist.find("span.n")
     all_assign_span.each(function(){
+        //console.log(tasklist.parent().attr("id"))
         ini = $(this).text();
         
-        no_acc = makeSortString(ini)
-        
         if ((ini.match(/\./g) || []).length == 1 && ini != "Anyone"){
+            no_acc = makeSortString(ini)
             img = "https://googledrive.com/host/0B8uGlSlmQZ2Zb29JMmFyU2hyLWc/" + no_acc.split(" ")[0] + ".png"
             $(this).html("<img src=" + img + " style='width: 21px; padding-right: 4px; vertical-align: middle;'>" + ini.split(" ")[0])
             $(this).css("line-height", "25px")
@@ -39,7 +39,7 @@ function runTasklist(tasklist){
     all_percent_span.each(function(){
         ini = $(this).text();
         if (ini == "90%"){
-            $(this).html("<div style='width: 45px; height:18px; background-color: rgb(0, 150, 25); color: white; text-align: center; border-radius: 5px;' >Done</div>")
+            $(this).html("<div style='width: 45px; height:18px; background-color: rgb(0, 150, 25); color: white; text-align: center; border-radius: 4px;' >Done</div>")
         }
     })
 
@@ -67,15 +67,15 @@ $(document).ready(function() {
         setTimeout(function() { ran = 0; }, 1500);
     });
  
-    $('body').on('DOMNodeInserted', '.taskListContent', function () {
-        id = $(this).parent().attr('id')
-        tasklist = $(this)
+    $('body').on('DOMNodeInserted', '.taskIcons', function () {
+        var id = $(this).parent().parent().parent().attr('id')
+        var task = $(this).parent().parent()
         
         if ($.inArray(id, ranTasklists) == -1){
             ranTasklists.push(id)
-            setTimeout(function() { runTasklist(tasklist); }, 200);            
+            runTasklist(task)          
         }
-        setTimeout(function() { ranTasklists.splice(ranTasklists.indexOf(id)); }, 1500);
+        setTimeout(function() { ranTasklists.splice(ranTasklists.indexOf(id)); }, 1000);
     });
    
 });
